@@ -31,6 +31,7 @@ public class ProductController {
                 null,20.0f);
 
         productRepository.save(details);
+        int a = 1+1;
         return productRepository.findOne(Integer.valueOf(id));
 
 //        try {
