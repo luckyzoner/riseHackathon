@@ -32,6 +32,7 @@ public class ProductController {
 
         productRepository.save(details);
         int a = 1+1;
+        int b = a+1;
         return productRepository.findOne(Integer.valueOf(id));
 
 //        try {
