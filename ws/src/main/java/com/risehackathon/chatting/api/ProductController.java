@@ -1,6 +1,5 @@
 package com.risehackathon.chatting.api;
 
-import com.risehackathon.chatting.jaxb.Product;
 import com.risehackathon.chatting.model.OrderDetails;
 import com.risehackathon.chatting.model.OrderResponse;
 import com.risehackathon.chatting.model.ProductDetails;
@@ -26,24 +25,20 @@ public class ProductController {
     @RequestMapping(value = "/{productUrl}",
                     method = RequestMethod.GET,
                     produces = MediaType.APPLICATION_JSON_VALUE)
-    public Product getProductDetails(@PathVariable(value = "productUrl")String id){
-        ProductDetails details =  productRepository.getProductDetail(Integer.valueOf(id));
+    public @ResponseBody ProductDetails getProductDetails(@PathVariable(value = "productUrl")String id){
 
-        Product product = new Product();
-        product.setImageSource(details.getImageSource());
-        product.setProductId(details.getProductId());
-        product.setProductName(details.getProductName());
-        product.setPrice(details.getPrice());
+        ProductDetails details = new ProductDetails(Integer.valueOf(id),"Shoes",
+                null,20.0f);
 
-        try {
-          product.setImageSource(Base64.encode(FileUtils.readFileToByteArray(new File("C:/Users/xps/IdeaProjects/risechatservice/images/shoes.jpg"))));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        productRepository.save(details);
+        return productRepository.findOne(Integer.valueOf(id));
 
+//        try {
+//            pdetails.setImageSource(Base64.encode(FileUtils.readFileToByteArray(new File("C:/Users/xps/Documents/GitHub/risehackathon/risehackathon/images/shoes.jpg"))));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-
-        return product;
     }
 
     @RequestMapping(name = "/orderplacement",method = RequestMethod.POST)

@@ -17,7 +17,7 @@
     </parent>
 
     <modules>
-        <module>schema</module>
+        <!--<module>schema</module>-->
         <module>ws</module>
     </modules>
 
@@ -27,38 +27,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
-
-    <build>
-        <plugins>
-
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-war-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
-                    <!--<warSourceDirectory>ws/src/main</warSourceDirectory>-->
-                    <!--<warName>risechatservice</warName>-->
-                    <!--<packagingExcludes>META-INF/web.xml</packagingExcludes>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-
-
-
-        </plugins>
-    </build>
 
     <repositories>
         <repository>

@@ -1,6 +1,5 @@
 package com.risehackathon.chatting.api;
 
-import com.risehackathon.chatting.jaxb.AppUser;
 import com.risehackathon.chatting.model.UserDetails;
 import com.risehackathon.chatting.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
@@ -19,10 +18,10 @@ public class SignInController {
 
     @RequestMapping(method = RequestMethod.POST,
     consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void registerNewUser(@RequestBody @Valid AppUser appUser){
-        UserDetails userDetails = new UserDetails();
-        BeanUtils.copyProperties(appUser,userDetails);
-        userRepository.save(userDetails);
+    public void registerNewUser(@RequestBody @Valid UserDetails user){
+        //UserDetails userDetails = new UserDetails();
+        //BeanUtils.copyProperties(appUser,userDetails);
+        userRepository.save(user);
     }
 
     @RequestMapping(value = "/{userName}/pwd/{pwd}",
