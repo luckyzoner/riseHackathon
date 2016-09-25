@@ -1,0 +1,22 @@
+{
+  "$schema" : "json-schema.org/draft-04/schema#;",
+  "type" : "object",
+  "properties" : {
+    "userName" : {
+      "type" : "string",
+      "minLength" : 1
+    },
+    "email" : {
+      "type" : "string",
+      "minLength" : 1
+    },
+    "mobile" : {
+      "type" : "string",
+      "minLength" : 1
+    },
+    "address" : {
+      "type" : "string",
+      "minLength" : 1
+    }
+  }
+}
