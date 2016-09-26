@@ -7,5 +7,6 @@ public class UserController {
     private int a = 0;
     private int c = 0;
     private int b = 1;
+    private int d = 2;
 
 }
