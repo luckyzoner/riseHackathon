@@ -5,4 +5,5 @@ package com.risehackathon.chatting.api;
  */
 public class UserController {
     private int a = 0;
+    private int b = 1;
 }
